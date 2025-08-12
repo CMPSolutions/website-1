@@ -1,0 +1,141 @@
+.about {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #e74c3c, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stat {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #e74c3c, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.5rem 0;
+}
+
+.stat p {
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 20px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  
+  .about-stats {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .stat {
+    flex: 0 1 calc(33.333% - 0.7rem);
+    min-width: 90px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .stat h3 {
+    font-size: 2rem;
+  }
+  
+  .stat p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 50px 15px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .stat {
+    flex: none;
+    width: 100%;
+    max-width: 200px;
+    padding: 2rem;
+  }
+  
+  .stat h3 {
+    font-size: 2.5rem;
+  }
+  
+  .stat p {
+    font-size: 0.9rem;
+  }
+}
