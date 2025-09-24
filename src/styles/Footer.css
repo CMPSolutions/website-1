@@ -1,119 +1,277 @@
 .footer {
-  background: linear-gradient(135deg, #e74c3c, #3498db, #2980b9);
+  background: linear-gradient(135deg, #2c3e50, #34495e);
   color: white;
-  padding: 3rem 20px 1rem;
+  padding: 4rem 0 0;
+  position: relative;
 }
 
-.footer .container {
-  max-width: 1200px;
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.footer-container {
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.footer-content {
+.footer-main {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 2rem;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
 }
 
-.footer-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.footer-brand h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.brand-accent {
+  background: linear-gradient(135deg, #e74c3c, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 400;
+}
+
+.footer-brand p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+}
+
+.footer-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 450px;
+}
+
+.footer-stat {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-stats .stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5) !important;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.footer-stats .stat-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 .footer-section h4 {
   font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.footer-section p {
-  opacity: 0.9;
-  line-height: 1.6;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section li {
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
+  margin-bottom: 0.75rem;
 }
 
 .footer-section a {
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  transition: opacity 0.3s;
+  font-size: 0.95rem;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 0.25rem 0;
+  cursor: pointer;
 }
 
 .footer-section a:hover {
-  opacity: 0.7;
+  color: white;
+  transform: translateX(5px);
 }
 
 .footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  opacity: 0.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 3rem 0 0;
+  }
+  
+  .footer-container {
+    padding: 0 1.5rem;
+  }
+  
+  .footer-main {
+    gap: 3rem;
+  }
+  
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 2.5rem 20px 1rem;
+    padding: 2.5rem 0 0;
   }
   
-  .footer-content {
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .footer-main {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-brand p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-stats {
+    margin: 0 auto;
+  }
+  
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-bottom: 1.5rem;
+    text-align: left;
   }
   
-  .footer-section h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
   }
   
-  .footer-section h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .footer-section p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-  
-  .footer-section li {
-    margin-bottom: 0.4rem;
-    font-size: 0.95rem;
-  }
-  
-  .footer-bottom {
-    padding-top: 1.5rem;
-    font-size: 0.9rem;
+  .footer-legal {
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 2rem 15px 1rem;
+    padding: 2rem 0 0;
   }
   
-  .footer-section h3 {
-    font-size: 1.2rem;
+  .footer-brand h3 {
+    font-size: 1.8rem;
   }
   
-  .footer-section h4 {
+  .footer-brand p {
     font-size: 1rem;
   }
   
-  .footer-section p,
-  .footer-section li {
-    font-size: 0.9rem;
+  .footer-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 250px;
   }
   
-  .footer-bottom {
-    font-size: 0.85rem;
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
+  }
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .footer-section a {
+    transition: none;
+  }
+  
+  .footer-section a:hover {
+    transform: none;
   }
 }

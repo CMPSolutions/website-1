@@ -1,0 +1,16 @@
+.animated-counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s ease;
+}
+
+.animated-counter.animating {
+  color: #4CAF50;
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animated-counter {
+    transition: none;
+  }
+}

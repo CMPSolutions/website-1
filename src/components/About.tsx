@@ -4,38 +4,80 @@ import '../styles/About.css';
 const About: React.FC = () => {
   return (
     <section id="about" className="about">
-      <div className="container">
-        <h2 className="section-title">About Factory Appliances Online</h2>
+      <div className="about-container">
         <div className="about-content">
           <div className="about-text">
-            <p>
-              Factory Appliances Online stands at the forefront of international electronics trade, 
-              bridging global markets with expertise and reliability. Our comprehensive network spans 
-              continents, delivering cutting-edge technology solutions to businesses worldwide.
+            <div className="section-badge">Our Story</div>
+            <h2 className="about-title">
+              Connecting Global Markets with <span className="title-accent">Innovation</span>
+            </h2>
+            <p className="about-description">
+              For over 15 years, Factory Appliances Online has been at the forefront of international 
+              electronics trade, building bridges between manufacturers and markets across the globe.
             </p>
-            <p>
-              With years of experience in large-scale import and export operations, we specialize in 
-              sourcing and distributing premium electronics at competitive prices. Our portfolio includes 
-              the latest smartphones, tablets, computers, and innovative satellite communication equipment.
-            </p>
-            <p>
-              We pride ourselves on our ability to handle high-volume transactions with precision, 
-              ensuring timely delivery and maintaining the highest standards of quality control throughout 
-              our supply chain.
-            </p>
+            
+            <div className="about-highlights">
+              <div className="highlight-item">
+                <div className="highlight-icon">🌍</div>
+                <div className="highlight-content">
+                  <h4>Global Reach</h4>
+                  <p>Our network spans continents, connecting manufacturers with distributors worldwide through strategic partnerships and local expertise.</p>
+                </div>
+              </div>
+              
+              <div className="highlight-item">
+                <div className="highlight-icon">⚡</div>
+                <div className="highlight-content">
+                  <h4>Quality Assurance</h4>
+                  <p>Every product undergoes rigorous quality control processes, ensuring only premium electronics reach our partners and end customers.</p>
+                </div>
+              </div>
+              
+              <div className="highlight-item">
+                <div className="highlight-icon">🚀</div>
+                <div className="highlight-content">
+                  <h4>Innovation Focus</h4>
+                  <p>We stay ahead of technology trends, sourcing the latest mobile devices, IoT solutions, and smart appliances for modern markets.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="about-cta">
+              <button className="cta-primary">Learn More About Us</button>
+              <button className="cta-secondary">View Our Portfolio</button>
+            </div>
           </div>
-          <div className="about-stats">
-            <div className="stat">
-              <h3>1M+</h3>
-              <p>Units Traded Annually</p>
-            </div>
-            <div className="stat">
-              <h3>50+</h3>
-              <p>Global Partners</p>
-            </div>
-            <div className="stat">
-              <h3>15+</h3>
-              <p>Years Experience</p>
+          
+          <div className="about-visual">
+            <div className="visual-card">
+              <div className="stats-grid">
+                <div className="stat-item">
+                  <span className="stat-number">1M+</span>
+                  <span className="stat-label">Units Traded</span>
+                  <span className="stat-period">Annually</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">50+</span>
+                  <span className="stat-label">Global Partners</span>
+                  <span className="stat-period">Worldwide</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">15+</span>
+                  <span className="stat-label">Years Experience</span>
+                  <span className="stat-period">In Trade</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">99.8%</span>
+                  <span className="stat-label">Success Rate</span>
+                  <span className="stat-period">Delivery</span>
+                </div>
+              </div>
+              
+              <div className="achievement-badges">
+                <div className="badge">ISO Certified</div>
+                <div className="badge">Global Trade Leader</div>
+                <div className="badge">Quality Excellence</div>
+              </div>
             </div>
           </div>
         </div>

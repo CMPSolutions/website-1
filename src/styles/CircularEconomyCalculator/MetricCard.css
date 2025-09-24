@@ -1,0 +1,205 @@
+.metric-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.metric-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--metric-color, #4CAF50);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.metric-card:hover::before {
+  transform: scaleX(1);
+}
+
+.metric-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--metric-color, #4CAF50), rgba(var(--metric-color, #4CAF50), 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover .metric-icon {
+  transform: scale(1.1);
+}
+
+.metric-icon .icon {
+  width: 28px;
+  height: 28px;
+}
+
+.metric-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #666;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.metric-value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.metric-value .animated-counter {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #333;
+  line-height: 1;
+}
+
+.metric-unit {
+  font-size: 1rem;
+  color: #888;
+  font-weight: 300;
+}
+
+.metric-equivalent {
+  min-height: 3rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.metric-equivalent.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.equivalent-text {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 300;
+}
+
+.metric-card-footer {
+  margin-top: auto;
+}
+
+.progress-indicator {
+  width: 100%;
+  height: 3px;
+  background: #f0f0f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--metric-color, #4CAF50), rgba(var(--metric-color, #4CAF50), 0.8));
+  border-radius: 2px;
+  transition: width 1s ease;
+  width: 0%;
+}
+
+/* Expanded state for detailed view */
+.metric-card.expanded {
+  background: linear-gradient(135deg, rgba(var(--metric-color, #4CAF50), 0.02), white);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .metric-card {
+    padding: 1.5rem;
+  }
+
+  .metric-card-header {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .metric-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .metric-icon .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .metric-title {
+    font-size: 1.1rem;
+  }
+
+  .metric-value .animated-counter {
+    font-size: 2rem;
+  }
+
+  .metric-unit {
+    font-size: 0.9rem;
+  }
+
+  .equivalent-text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metric-card {
+    padding: 1.25rem;
+  }
+
+  .metric-value .animated-counter {
+    font-size: 1.8rem;
+  }
+
+  .metric-title {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .metric-card,
+  .metric-icon,
+  .metric-equivalent,
+  .progress-bar {
+    transition: none;
+  }
+
+  .metric-card:hover {
+    transform: none;
+  }
+
+  .metric-card:hover .metric-icon {
+    transform: none;
+  }
+}
